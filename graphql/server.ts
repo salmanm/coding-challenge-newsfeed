@@ -19,9 +19,26 @@ const typeDefs = gql`
     projects: [Project!]!
   }
 
+  enum Fellowship {
+    founders
+    angels
+    writers
+    all
+  }
+
+  type Announcement {
+    id: Int!
+    fellowship: Fellowship!
+    title: String!
+    body: String!
+    created_ts: String!
+    updated_ts: String!
+  }
+
   type Query {
     project(id: Int!): Project!
     user(id: Int!): User!
+    announcement(id: Int!): Announcement!
   }
 `;
 
