@@ -1,4 +1,4 @@
-import db, {UserRow, ProjectRow} from '../../db'
+import db, { UserRow, ProjectRow } from '../../db';
 
 export default async function users(project: ProjectRow): Promise<UserRow[]> {
   const users: UserRow[] = await db.getAll(
@@ -9,6 +9,6 @@ export default async function users(project: ProjectRow): Promise<UserRow[]> {
       WHERE up.project_id = ?
     `,
     [project.id]
-  )
-  return users
+  );
+  return users;
 }

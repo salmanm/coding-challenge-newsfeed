@@ -1,31 +1,25 @@
-import Link from 'next/link'
 import styled from 'styled-components'
 import Card from './Card'
-import Markdown from './Markdown'
 
 type Props = {
-  announcement: Announcement;
+  announcement: Announcement
 }
 
 type Announcement = {
-  id: number;
-  fellowship: "founders" | "angels" | "writers" | "all";
-  title: string;
-  body: string;
-  created_ts: string;
-  updated_ts: string;
+  id: number
+  fellowship: 'founders' | 'angels' | 'writers' | 'all'
+  title: string
+  body: string
+  created_ts: string
+  updated_ts: string
 }
 
 export default function AnnouncementCard({ announcement }: Props) {
   return (
     <Card>
       <Columns>
-        <ColumnLeft>
-          {announcement.title}
-        </ColumnLeft>
-        <ColumnRight>
-          {announcement.body}
-        </ColumnRight>
+        <ColumnLeft>{announcement.title}</ColumnLeft>
+        <ColumnRight>{announcement.body}</ColumnRight>
       </Columns>
     </Card>
   )
